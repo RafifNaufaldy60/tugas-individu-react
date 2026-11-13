@@ -1,5 +1,5 @@
-import React from 'react'
 import { useState, useEffect } from 'react'
+import './LiveClock.css'
 
 export default function LiveClock() {
     const [time, setTime] = useState(new Date().toLocaleTimeString())
@@ -13,8 +13,10 @@ export default function LiveClock() {
     }, [])
 
     return (
-        <div>
-            <h1>{time}</h1>
+        <div className="live-clock">
+            <p className="live-clock__label">Waktu sekarang</p>
+            <h1 className="live-clock__time">{time}</h1>
+            <p className="live-clock__caption">Waktu lokal perangkat Anda</p>
         </div>
     )
 }
